@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ketan Sharma | Mechanical Design Portfolio</title>
+<meta name="description" content="Mechanical engineering student at San Jose State University. Projects in SolidWorks, GD&T, machining, sheet metal and mechatronics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f4f6f8; --card:#ffffff; --ink:#15212c; --muted:#53626f;
+  --navy:#1f4e79; --brass:#b8861b; --line:#c5cfd8;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#10171e; --card:#17212b; --ink:#e6ecf1; --muted:#9aabb8;
+    --navy:#7fb2e0; --brass:#e0b04a; --line:#2c3b49;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--body)}
+a{color:var(--navy);text-underline-offset:3px}
+a:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+header{border-bottom:2px solid var(--ink);padding:56px 0 40px}
+header h1{font:700 clamp(3rem,9vw,5.5rem)/.95 var(--display);margin:0 0 14px;letter-spacing:.01em}
+header p.role{font-size:1.25rem;margin:0 0 6px;font-weight:500}
+header p.sub{margin:0 0 22px;color:var(--muted);max-width:60ch}
+nav{display:flex;flex-wrap:wrap;gap:8px 22px;font-weight:500}
+
+section{padding:56px 0 8px}
+h2{font:700 2rem/1.1 var(--display);margin:0 0 20px;letter-spacing:.01em}
+
+/* Project: a drawing title block opens each one */
+.project{padding:48px 0;border-bottom:1px solid var(--line)}
+.project:last-of-type{border-bottom:0}
+.titleblock{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border:2px solid var(--ink);background:var(--card);margin-bottom:28px}
+.titleblock>div{padding:10px 14px;border-left:1px solid var(--ink)}
+.titleblock>div:first-child{border-left:0}
+.titleblock small{display:block;color:var(--muted);font-size:.8rem;line-height:1.2;margin-bottom:2px}
+.titleblock h3{font:700 clamp(1.6rem,4vw,2.4rem)/1.05 var(--display);margin:0;color:var(--navy)}
+.titleblock b{font-weight:600}
+@media(max-width:760px){
+  .titleblock{grid-template-columns:1fr 1fr}
+  .titleblock>div:first-child{grid-column:1/-1;border-bottom:1px solid var(--ink)}
+  .titleblock>div:nth-child(2){border-left:0}
+  .titleblock>div:nth-child(n+4){border-top:1px solid var(--ink)}
+}
+
+.layout{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:36px;align-items:start}
+@media(max-width:900px){.layout{grid-template-columns:1fr}}
+.figs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:520px){.figs{grid-template-columns:1fr}}
+figure{margin:0;background:var(--card);border:1px solid var(--line)}
+figure img{display:block;width:100%;height:auto}
+figcaption{padding:8px 12px;font-size:.9rem;color:var(--muted);border-top:1px solid var(--line)}
+figure.missing{min-height:150px;border-style:dashed}
+figure.missing img{display:none}
+figure.missing figcaption{border-top:0;padding:56px 12px;text-align:center}
+
+.copy h4{font:700 1.35rem/1.2 var(--display);color:var(--navy);margin:0 0 6px}
+.copy h4:not(:first-child){margin-top:22px}
+.copy ul{margin:0;padding-left:1.1em}
+.copy li{margin-bottom:8px}
+.copy li::marker{color:var(--brass)}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border:2px solid var(--ink);background:var(--card)}
+.skills div{padding:16px 18px;border-left:1px solid var(--ink)}
+.skills div:first-child{border-left:0}
+.skills h3{font:700 1.3rem/1.2 var(--display);margin:0 0 6px;color:var(--navy)}
+.skills p{margin:0}
+@media(max-width:560px){.skills div{border-left:0;border-top:1px solid var(--ink)}.skills div:first-child{border-top:0}}
+
+footer{margin-top:48px;border-top:2px solid var(--ink);padding:32px 0 56px}
+footer p{margin:0 0 6px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Ketan Sharma</h1>
+    <p class="role">Mechanical engineering student, San Jose State University, graduating May 2028</p>
+    <p class="sub">I design parts in SolidWorks, then machine, print and wire them myself. I’m looking for a mechanical design internship in Silicon Valley.</p>
+    <nav aria-label="Page sections">
+      <a href="#dispenser">Medication Dispenser</a>
+      <a href="#hanger">Wall Mounted Hanger</a>
+      <a href="#mailbox">Mini Mailbox</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ===== Project 1 ===== -->
+<article class="project" id="dispenser">
+  <div class="titleblock">
+    <div><small>Project</small><h3>Automated Medication Dispenser</h3></div>
+    <div><small>Type</small><b>Mechatronics</b></div>
+    <div><small>Controller</small><b>Raspberry Pi Pico</b></div>
+    <div><small>Result</small><b>90% detection (18/20)</b></div>
+  </div>
+  <div class="layout">
+    <div class="figs">
+      <figure><img src="images/dispenser-cad.png" alt="SolidWorks CAD model of the pill dispenser housing with rotating carousel" onerror="this.parentNode.classList.add('missing')"><figcaption>CAD design</figcaption></figure>
+      <figure><img src="images/dispenser-circuit.png" alt="Circuit diagram connecting the Pico, motor driver, sensors and real-time clock" onerror="this.parentNode.classList.add('missing')"><figcaption>Circuit diagram</figcaption></figure>
+      <figure><img src="images/dispenser-final.png" alt="Finished black dispenser box with open lid showing the carousel and a pull-out tray" onerror="this.parentNode.classList.add('missing')"><figcaption>Final product</figcaption></figure>
+      <figure><img src="images/dispenser-blocks.png" alt="System block diagram from user interface through control, actuation, mechanics and feedback" onerror="this.parentNode.classList.add('missing')"><figcaption>System block diagram</figcaption></figure>
+    </div>
+    <div class="copy">
+      <h4>What</h4>
+      <ul>
+        <li>A 7-compartment pill tray with an automated dispenser, built to cut down on missed doses.</li>
+        <li>Combines a real-time clock, display and Raspberry Pi Pico into one mechatronic device.</li>
+        <li>Reminds the user and confirms both dispensing and retrieval.</li>
+      </ul>
+      <h4>How</h4>
+      <ul>
+        <li><b>Mechanical:</b> a 3D printed rotating carousel driven by a unipolar motor, advancing one compartment per day.</li>
+        <li><b>Sensors:</b> an IR break-beam confirms the pill drop, an ultrasonic sensor tracks the tray opening and closing, and a PIR sensor detects the user.</li>
+        <li><b>Power:</b> a DC-DC buck converter regulates 5V, and the Pico runs the components from its 3.3V rail.</li>
+      </ul>
+      <h4>Results</h4>
+      <ul>
+        <li>90% accuracy in pill-drop detection (18 of 20). Both misses traced to break-beam sensor instability.</li>
+        <li>The electronics performed reliably for scheduled dispensing.</li>
+        <li>The final product is not as light or compact as planned. Next steps are a custom PCB and a circular housing.</li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<!-- ===== Project 2 ===== -->
+<article class="project" id="hanger">
+  <div class="titleblock">
+    <div><small>Project</small><h3>Wall Mounted Hanger</h3></div>
+    <div><small>Material</small><b>Aluminum</b></div>
+    <div><small>Processes</small><b>Lathe, mill</b></div>
+    <div><small>Fastener</small><b>#10-24 flat head</b></div>
+  </div>
+  <div class="layout">
+    <div class="figs">
+      <figure><img src="images/hanger-lathe.png" alt="SolidWorks drawing of the lathe-turned peg with dimensions and callouts" onerror="this.parentNode.classList.add('missing')"><figcaption>Lathe part drawing</figcaption></figure>
+      <figure><img src="images/hanger-mill.png" alt="SolidWorks drawing of the milled plate with hole and cutout dimensions" onerror="this.parentNode.classList.add('missing')"><figcaption>Mill part drawing</figcaption></figure>
+      <figure><img src="images/hanger-exploded.png" alt="Exploded assembly view of plate, peg and screw" onerror="this.parentNode.classList.add('missing')"><figcaption>Exploded assembly view</figcaption></figure>
+      <figure><img src="images/hanger-final.png" alt="Finished aluminum plate with peg and four countersunk corner holes" onerror="this.parentNode.classList.add('missing')"><figcaption>Final product</figcaption></figure>
+    </div>
+    <div class="copy">
+      <h4>What</h4>
+      <ul>
+        <li>A heavy-duty aluminum wall-mount hanger made from two machined parts: a milled 2.375" × 3.250" plate and a lathe-turned peg, joined with a #10-24 flat-head screw.</li>
+        <li>Designed to carry real load with a clean, engraved, deburred finish on both visible faces.</li>
+        <li>Full SolidWorks drawings with GD&T and shop-floor machining callouts so the parts can be made again.</li>
+      </ul>
+      <h4>How</h4>
+      <ul>
+        <li><b>Lathe part:</b> turned 0.750" O.D. stock to a 0.502" shoulder, then faced, chamfered 45°, countersunk, tapped #10-24 and parted to 5/8".</li>
+        <li><b>Mill part:</b> squared the stock, tapped the center hole, cut two 0.25"-radius cutouts, planed to 0.360" and countersunk four corner holes.</li>
+        <li><b>Verification:</b> checked thread and countersink fits, then deburred and engraved per the title block.</li>
+      </ul>
+      <h4>Results</h4>
+      <ul>
+        <li>Measured 2.367" × 3.255" × 0.3625" against targets of 2.375", 3.250" and 0.360". All within a few thousandths.</li>
+        <li>The mill and lathe parts mated cleanly on the first assembly attempt.</li>
+        <li>Next steps: reduce wall thickness to save weight and add a protective coating for corrosion resistance.</li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<!-- ===== Project 3 ===== -->
+<article class="project" id="mailbox">
+  <div class="titleblock">
+    <div><small>Project</small><h3>Mini Mailbox</h3></div>
+    <div><small>Material</small><b>24 ga steel, hardwood</b></div>
+    <div><small>Processes</small><b>Sheet metal, woodworking</b></div>
+    <div><small>Tolerance</small><b>±1/16"</b></div>
+  </div>
+  <div class="layout">
+    <div class="figs">
+      <figure><img src="images/mailbox-sheetmetal.png" alt="Hand drawing of the sheet-metal roof, door and back with dimensions" onerror="this.parentNode.classList.add('missing')"><figcaption>Sheet-metal drawing: roof, door, back</figcaption></figure>
+      <figure><img src="images/mailbox-wood.png" alt="Hand drawing of the wooden base, bottom and dowel post" onerror="this.parentNode.classList.add('missing')"><figcaption>Wood drawing: base, bottom, dowel post</figcaption></figure>
+      <figure><img src="images/mailbox-final.png" alt="Finished steel mailbox with an open hinged door on a wooden base and dowel post" onerror="this.parentNode.classList.add('missing')"><figcaption>Final product</figcaption></figure>
+    </div>
+    <div class="copy">
+      <h4>What</h4>
+      <ul>
+        <li>A miniature hinged-door mailbox built from two subsystems, sheet metal and wood, all by hand.</li>
+        <li>Toleranced hand drawings and repeatable fabrication procedures for the build.</li>
+      </ul>
+      <h4>How</h4>
+      <ul>
+        <li><b>Sheet metal:</b> sheared, punched and filed the roof, door and back from steel. Hand-formed the door arch, then arc-bent the roof to a matching radius.</li>
+        <li><b>Wood:</b> cut the base and bottom, notched blind holes for the hinge tabs and chamfered both parts on the table saw and band saw.</li>
+        <li><b>Assembly:</b> bent the hinge tabs, aligned and drilled the shell holes, screwed it together and glued in the dowel.</li>
+      </ul>
+      <h4>Results</h4>
+      <ul>
+        <li>Held almost every dimension to ±1/16", including a roof bend radius that nearly matches the back’s arch.</li>
+        <li>Finished a working mailbox with a hinged door that opens and closes.</li>
+        <li>Next steps: even out the roof’s bend radius and adjust tolerances so the door moves more smoothly.</li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<!-- ===== Skills ===== -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div><h3>Design</h3><p>SolidWorks, GD&amp;T, DFM</p></div>
+    <div><h3>Fabrication</h3><p>3D printing, machining, woodworking, sheet metal</p></div>
+    <div><h3>Electronics and programming</h3><p>Raspberry Pi Pico, Arduino, Python, C++</p></div>
+  </div>
+</section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p><a href="mailto:ketansharma023@gmail.com">ketansharma023@gmail.com</a></p>
+    <p><a href="https://www.linkedin.com/in/ketansharma1016">linkedin.com/in/ketansharma1016</a></p>
+    <p style="color:var(--muted)">B.S. Mechanical Engineering, San Jose State University, May 2028. San Jose, CA.</p>
+  </div>
+</footer>
+
+</body>
+</html>
