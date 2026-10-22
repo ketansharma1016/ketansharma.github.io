@@ -34,7 +34,7 @@ aside h1{font:700 2rem/1.1 var(--display);margin:0 0 6px}
 
 /* main */
 main{flex:1;min-width:0;background:var(--side);border:1px solid var(--line);border-radius:6px;padding:0 32px 40px}
-.tabs{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:0 6px;border-bottom:1px solid var(--line);padding:0}
+.tabs{display:flex;justify-content:flex-end;gap:6px;border-bottom:1px solid var(--line);padding:0}
 .tab{background:none;border:0;padding:20px 14px;color:var(--muted);font-weight:500;border-bottom:3px solid transparent;margin-bottom:-1px}
 .tab[aria-selected=true]{color:var(--ink);border-color:var(--brass);background:linear-gradient(to top,rgba(23,63,122,.12),transparent)}
 h2{font:800 2.6rem/1.05 var(--display);margin:32px 0 18px;text-transform:uppercase;letter-spacing:.02em}
@@ -43,20 +43,6 @@ h3{font:700 1.6rem/1.2 var(--display);margin:30px 0 10px;color:var(--ink)}
 .chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:8px}
 .chip{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--brass);border-radius:4px;padding:16px 18px}
 .chip b{display:block;font:700 1.4rem var(--display);color:var(--brass);margin-bottom:4px}
-
-/* hobbies */
-.hobbies{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:8px}
-.hobby{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--brass);border-radius:4px;padding:16px 18px}
-.hobby img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:3px;margin-bottom:12px;background:#fff}
-.hobby h3{margin:0 0 6px;font-size:1.4rem}
-.hobby p{margin:0;color:var(--muted)}
-
-/* contact */
-.btn{display:inline-block;background:var(--brass);color:#fff;text-decoration:none;font-weight:600;padding:11px 22px;border-radius:4px;border-bottom:3px solid var(--ink)}
-.btn:hover{background:var(--ink);color:#fff}
-.btn.alt{background:var(--card);color:var(--brass);border:1px solid var(--brass);border-bottom:3px solid var(--brass)}
-.btn.alt:hover{background:var(--brass);color:#fff}
-.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
 
 /* resume */
 .entry{border-left:2px solid var(--line);padding:0 0 18px 20px;margin-left:6px;position:relative}
@@ -122,8 +108,6 @@ figure.missing{border-style:dashed}figure.missing img{display:none}figure.missin
     <button class="tab" role="tab" data-t="about" aria-selected="true">About</button>
     <button class="tab" role="tab" data-t="resume" aria-selected="false">Resume</button>
     <button class="tab" role="tab" data-t="work" aria-selected="false">Portfolio</button>
-    <button class="tab" role="tab" data-t="hobbies" aria-selected="false">Hobbies</button>
-    <button class="tab" role="tab" data-t="contact" aria-selected="false">Contact</button>
   </div>
 
   <!-- ABOUT -->
@@ -142,42 +126,25 @@ figure.missing{border-style:dashed}figure.missing img{display:none}figure.missin
   <!-- RESUME -->
   <section class="panel" id="resume" hidden>
     <h2>Resume</h2>
-    <h3>Objective</h3>
-    <p>College student seeking an internship in the field of mechanical design in Silicon Valley.</p>
-
     <h3>Education</h3>
     <div class="entry"><h4>San Jose State University, San Jose, CA</h4><div class="meta">B.S. Mechanical Engineering, May 2028. GPA 3.42</div>
       <div>Relevant coursework: Mechatronics, Machine Operations &amp; Safety, Machining Processes</div></div>
-
+    <h3>Experience</h3>
+    <div class="entry"><h4>Technology Consultant, Target, San Jose West, CA</h4><div class="meta">September 2023 – August 2025</div>
+      <ul><li>Delivered personalized technical solutions by assessing customer demands and expectations.</li>
+      <li>Resolved and clarified product features, software and hardware issues, improving customer understanding and satisfaction.</li>
+      <li>Monitored inventory and pricing strategies to optimize sales through floor products and placements.</li></ul></div>
+    <h3>Other project</h3>
+    <div class="entry"><h4>Thermoelectric Generator, Senior Project, Branham High</h4><div class="meta"><a href="https://tinyurl.com/thermoelectricgen">Project page</a></div>
+      <ul><li>Designed and tested a thermoelectric wearable wrist prototype, validating heat-to-electricity conversion.</li>
+      <li>Defined design criteria and built a test framework to assess performance and materials.</li>
+      <li>Surveyed students to identify user needs, constraints and design specifications.</li></ul></div>
     <h3>Skills</h3>
     <div class="chips">
       <div class="chip"><b>Design</b>SolidWorks, GD&amp;T, DFM</div>
       <div class="chip"><b>Fabrication</b>3D printing, machining, woodworking, sheet metal</div>
-      <div class="chip"><b>Electronics and programming</b>Raspberry Pi Pico, Arduino, Python, C++</div>
+      <div class="chip"><b>Electronics and code</b>Raspberry Pi Pico, Arduino, Python, C++</div>
     </div>
-
-    <h3>Projects</h3>
-    <div class="entry"><h4>Automated Medication Dispenser</h4>
-      <ul><li>Designed and 3D printed a seven-compartment rotating carousel mechanism to house and organize individual medication pills for timed doses.</li>
-      <li>Integrated a microcontroller, wired electrical components, and multi-sensor feedback logic with a user interface to automate weekly medication dispensing, verify pill delivery, and monitor user medication retrieval.</li>
-      <li>Achieved 90% accuracy (18/20) in pill-drop detection through RTC-driven scheduled dispensing control.</li></ul></div>
-    <div class="entry"><h4>Wall Mounted Hanger</h4>
-      <ul><li>Machined a two-part, heavy-duty aluminum wall-mount hanger: a milled plate and a lathed peg.</li>
-      <li>Applied manufacturing processes to meet precision fit requirements, including countersinking, threading, and assembling a #10-24 flat machine screw between the lathe and mill parts.</li>
-      <li>Achieved finished product dimensions within ±0.005" of target tolerances.</li></ul></div>
-    <div class="entry"><h4>Mini Mailbox</h4>
-      <ul><li>Fabricated a miniature hinged door mailbox through sheet metal and woodworking processes.</li>
-      <li>Assembled mailbox with a functioning hinged door, holding almost all fit tolerances within ±1/16" of the drawing specifications.</li></ul></div>
-    <div class="entry"><h4>Thermoelectric Generator, Senior Project, Branham High</h4><div class="meta"><a href="https://tinyurl.com/thermoelectricgen">Project page</a></div>
-      <ul><li>Designed and tested thermoelectric wearable wrist prototype, validating the concept of heat-to-electricity conversion.</li>
-      <li>Defined design criteria and implemented test framework to assess prototype performance and materials.</li>
-      <li>Collected and analyzed survey data from students to identify user needs, constraints, parameters, and design specifications.</li></ul></div>
-
-    <h3>Work experience</h3>
-    <div class="entry"><h4>Technology Consultant, Target, San Jose West, CA</h4><div class="meta">September 2023 – August 2025</div>
-      <ul><li>Delivered personalized technical solutions through assessing customer demands and expectations.</li>
-      <li>Resolved and clarified product features, software and hardware issues, enhancing customer understanding and improving overall satisfaction.</li>
-      <li>Monitored inventory and pricing strategies to optimize sales performance through floor products and placements.</li></ul></div>
   </section>
 
   <!-- PORTFOLIO -->
@@ -243,7 +210,7 @@ figure.missing{border-style:dashed}figure.missing img{display:none}figure.missin
             <li><b>Mill part:</b> squared the stock, tapped the center hole, cut two 0.25"-radius cutouts, planed to 0.360" and countersunk four corner holes.</li>
             <li><b>Verification:</b> checked thread and countersink fits, then deburred and engraved.</li></ul>
           <h4>Results</h4><ul>
-            <li>Measured 2.376" × 3.255" × 0.3625" against targets of 2.375", 3.250" and 0.360". All within a few thousandths.</li>
+            <li>Measured 2.367" × 3.255" × 0.3625" against targets of 2.375", 3.250" and 0.360". All within a few thousandths.</li>
             <li>The parts mated cleanly on the first assembly attempt.</li>
             <li>Next steps: reduce wall thickness to save weight and add a protective coating.</li></ul>
         </div>
@@ -274,47 +241,6 @@ figure.missing{border-style:dashed}figure.missing img{display:none}figure.missin
         </div>
       </div>
     </article>
-  </section>
-
-  <!-- HOBBIES -->
-  <section class="panel" id="hobbies" hidden>
-    <h2>Hobbies</h2>
-    <p>What I do when I'm not in the shop or in SolidWorks.</p>
-    <!-- EDIT ME: replace the bracketed text in each card with a real hobby and a sentence or two.
-         To add a photo, put a file in the images folder (for example images/hobby-1.jpg).
-         To add another hobby, copy a whole <div class="hobby"> block. To remove one, delete its block. -->
-    <div class="hobbies">
-      <div class="hobby">
-        <img src="images/hobby-1.jpg" alt="" onerror="this.remove()">
-        <h3>[Your hobby]</h3>
-        <p>[One or two sentences about what you do and why you like it.]</p>
-      </div>
-      <div class="hobby">
-        <img src="images/hobby-2.jpg" alt="" onerror="this.remove()">
-        <h3>[Another hobby]</h3>
-        <p>[One or two sentences about what you do and why you like it.]</p>
-      </div>
-      <div class="hobby">
-        <img src="images/hobby-3.jpg" alt="" onerror="this.remove()">
-        <h3>[A third hobby]</h3>
-        <p>[One or two sentences about what you do and why you like it.]</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="panel" id="contact" hidden>
-    <h2>Contact</h2>
-    <p>I'm looking for a mechanical design internship in Silicon Valley. If you have a role open or want to talk about one of my projects, send me an email.</p>
-    <div class="chips">
-      <div class="chip"><b>Email</b><a href="mailto:ketansharma023@gmail.com">ketansharma023@gmail.com</a></div>
-      <div class="chip"><b>LinkedIn</b><a href="https://www.linkedin.com/in/ketansharma1016">linkedin.com/in/ketansharma1016</a></div>
-      <div class="chip"><b>Location</b>San Jose, California</div>
-    </div>
-    <div class="btns">
-      <a class="btn" href="mailto:ketansharma023@gmail.com">Email me</a>
-      <a class="btn alt" href="https://www.linkedin.com/in/ketansharma1016">Connect on LinkedIn</a>
-    </div>
   </section>
 </main>
 </div>
